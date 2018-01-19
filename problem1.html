@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>problem 1</title>
+</head>
+<body>
+    <div id="main">
+    <input type="text" placeholder="Your Name Please" id="userName">
+    <button id="button">Send</button>
+    </div>
+
+    <div id="result"></div>
+    <script>
+        var container = document.getElementById("result");
+        var userName = document.getElementById("userName");
+        var button = document.getElementById("button");
+        var whatsYourName = function(){
+                container.innerHTML = userName.value;
+            }
+        button.addEventListener("click",whatsYourName);
+
+    </script>
+</body>
+</html>
