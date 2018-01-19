@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>problem 4</title>
+</head>
+<body>
+    <div id="main">
+    <input type="number" placeholder="Enter any number" id="number" >
+    <button id="button">Send</button>
+    </div>
+
+    <div id="result"></div>
+    <script>
+        var container = document.getElementById("result");
+        var number = document.getElementById("number");
+        var button = document.getElementById("button");
+        var sum = 0;
+        var arr = [];
+        var loopThroughNumbers = function(){
+            var max = number.value;
+            for(var i=0; i<max; i++){
+                // debugger;
+                // console.log( "array push" + arr.push(i));
+                var current = arr.push(i)
+                //console.log(max,i,arr[i-1])
+                // console.log( "i", i, "arr[i]", arr[i], ", push:", current);
+                console.log(i,arr)
+                container.innerHTML += ("<br>" +  "numbers are : "+i+" "+"<br1>");
+                if(arr[i] %3 == 0 || arr[i] %5 == 0){
+                sum += arr[i];
+                }
+          }  
+                container.innerHTML +="<br>"+ " Sum is: " + sum + "<br/>";
+        }
+        button.addEventListener("click",loopThroughNumbers);
+        loopThroughNumbers()
+    </script>
+</body>
+</html>
