@@ -21,20 +21,22 @@
         var button1 = document.getElementById("product");
         var sum = 0;
         var product = 1;
-        var arr = [1];
+        var arr = new Array();
+
         var Sum = function(){
             var userNumber = number.value;
-            for(var i=0; i<=userNumber; i++){
+            for(var i=1; i<=userNumber; i++){
                 // debugger;
                 // console.log( "array push" + arr.push(i));
-                var current = arr.push(i)
+                var current = arr.push(i);
                 //console.log(max,i,arr[i-1])
                 // console.log( "i", i, "arr[i]", arr[i], ", push:", current);
-                console.log(i,arr)
+                console.log(i,arr);
                 container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
-                sum += arr[i];
+                sum += i;
           }  
                 container.innerHTML +="<br>"+ " Sum is: " + sum + "<br/>";
+                sum=0;
         }
 
         var Product = function(){
@@ -43,9 +45,10 @@
             for(var i=1; i<= userNumber; i++){
                 var current = arr.push(i);
                 container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
-                product *= arr[i];
+                product *= i;
             }
             container.innerHTML +="<br>"+ " Product is: " + product + "<br/>";
+            product=1;
         }
 
 
