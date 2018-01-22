@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="main">
-    <input type="number" placeholder="Enter any number" id="number" value="10">
+    <input type="number" placeholder="Enter any number" id="number" >
     <button id="button">Send</button>
     </div>
 
@@ -18,20 +18,34 @@
         var number = document.getElementById("number");
         var button = document.getElementById("button");
         var sum = 0;
-        var arr = [];
+        
+        // var arr = [0];
         var loopThroughNumbers = function(){
             var max = number.value;
-            for(var i=0; i<=max; i++){
+            for(var i=1; i<=max; i++){
                 // debugger;
                 // console.log( "array push" + arr.push(i));
-                var current = arr.push(i)
+                var arr = new Array();
+                    for(var j=0;j<max.length;j++){
+                        var current = arr.push(i);
+                        container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
+                        sum+=i;
+                    
+                           
+                }
+                
+                // var current = arr.push(i)
                 //console.log(max,i,arr[i-1])
                 // console.log( "i", i, "arr[i]", arr[i], ", push:", current);
                 console.log(i,arr)
-                container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
-                sum += arr[i];
-          }  
+                //container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
+                // sum += i;
+                
+                
+          } 
+                 //container.innerHTML += ("<br>" +  "numbers are : "+ i +"<br1>");
                 container.innerHTML +="<br>"+ " Sum is: " + sum + "<br/>";
+                sum=0;
         }
         button.addEventListener("click",loopThroughNumbers);
         loopThroughNumbers()
