@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>problem 7</title>
+</head>
+<body>
+    <div id="main">
+    <input type="number" placeholder="Enter any number" id="number" >
+    <button id="button">Send</button>
+    </div>
+
+    <div id="result"></div>
+    <script>
+        var container = document.getElementById("result");
+        var number = document.getElementById("number");
+        var button = document.getElementById("button");
+    
+
+        var  isPrime= function(num){
+            if(num ==2){
+                return true;
+            }
+            for(var j=2; j<num; j++){
+                   if( num%j==0 ){
+                    return false;
+                }
+                return true;
+          }
+          return false;
+        }
+
+        var loopThroughNumbers = function(n){
+
+            for(var i=1;i<=n;i++){
+                // var numbers = isPrime(i);
+                var statement = isPrime(i)?container.innerHTML +=  i + " is a prime number<br>" :container.innerHTML +=  i +" is  not a prime number<br>";
+           }
+                            
+        }
+        
+        button.addEventListener("click",()=>loopThroughNumbers(number.value));
+        
+
+
+
+        /* another way
+        function isPrime(num){
+            if(num==1){return false}
+            for(var i=2;i < num; i++){
+                if(num % i == 0){ return false}
+            }
+            return true
+        }
+        */
+    </script>
+</body>
+</html>
+
