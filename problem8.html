@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>problem 8</title>
+</head>
+<body>
+    <div id="main">
+    <h1>Guess what number i am</h1>
+    <input type="number" placeholder="Enter any number" id="number" >
+    <button id="button">Send</button>
+    </div>
+
+    <div id="result"></div>
+    <div id="numOfTries"></div>
+    <script>
+        var container = document.getElementById("result");
+        var number = document.getElementById("number");
+        var button = document.getElementById("button");
+        var tryNumber = document.getElementById("numOfTries");
+        var tries = 0;
+        var previousValue = 0;
+
+        var guessMe = function(num){
+            debugger;
+            winningNum = 125;
+            
+            if(num == winningNum){
+                container.innerHTML = "You Won";
+            }else if(num>winningNum){
+                
+                if(previousValue == num){
+                    container.innerHTML = "You just entered the same value "+ previousValue;     
+                }else{
+                tries++;
+                container.innerHTML = "You are too high try a lower number";
+                }
+
+            }else if(num<winningNum){
+                
+                if(previousValue == num){
+                    container.innerHTML = "You just entered the same value "+ previousValue;     
+                }else{
+                tries++;
+                container.innerHTML = "You are too low try a higher number";
+                }
+            }
+            tryNumber.innerHTML ="Number of tries: "+ tries;
+            previousValue = num;
+            }
+        
+        
+        
+        button.addEventListener("click",()=>guessMe(number.value));
+        
+    </script>
+</body>
+</html>
